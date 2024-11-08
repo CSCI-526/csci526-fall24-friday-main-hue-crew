@@ -284,6 +284,14 @@ PrefabInstance:
       propertyPath: helpText
       value: 
       objectReference: {fileID: 1902890988}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: visibleOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: dismissKey
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 3193400242586123686, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.58
@@ -699,6 +707,10 @@ PrefabInstance:
       propertyPath: helpText
       value: 
       objectReference: {fileID: 2095320245}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: visibleOn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3193400242586123686, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.727
@@ -759,7 +771,19 @@ PrefabInstance:
     - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: helpText
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 646119176}
+=======
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: visibleOn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: dismissKey
+      value: 0
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 3193400242586123686, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.98
@@ -1011,7 +1035,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpText: {fileID: 0}
-  displayDuration: 5
+  visibleOn: 0
+  dismissKey: 32
 --- !u!222 &1187386327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1160,7 +1185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpText: {fileID: 0}
-  displayDuration: 5
+  visibleOn: 0
+  dismissKey: 32
 --- !u!222 &1227074280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1203,6 +1229,14 @@ PrefabInstance:
       propertyPath: helpText
       value: 
       objectReference: {fileID: 1187386323}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: visibleOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: dismissKey
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 3193400242586123686, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.01
@@ -1402,7 +1436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpText: {fileID: 0}
-  displayDuration: 5
+  visibleOn: 0
+  dismissKey: 32
 --- !u!222 &1902890992
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1551,7 +1586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpText: {fileID: 0}
-  displayDuration: 5
+  visibleOn: 0
+  dismissKey: 32
 --- !u!222 &2095320249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1812,6 +1848,14 @@ PrefabInstance:
       propertyPath: helpText
       value: 
       objectReference: {fileID: 1227074276}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: visibleOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751458416692886900, guid: 717c66e5833229843963b801015bfefa, type: 3}
+      propertyPath: dismissKey
+      value: 275
+      objectReference: {fileID: 0}
     - target: {fileID: 3193400242586123686, guid: 717c66e5833229843963b801015bfefa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.05

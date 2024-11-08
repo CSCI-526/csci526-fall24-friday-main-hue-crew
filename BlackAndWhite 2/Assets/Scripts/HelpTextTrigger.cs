@@ -1,28 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;  
+using TMPro;
 
 public class HelpTextTrigger : MonoBehaviour
 {
-    public GameObject helpText; 
-    public float displayDuration = 5f;  
-    private static GameObject currentHelpText = null;  
+    public GameObject helpText;
+    private TextMeshProUGUI textComponent;
+    private BackgroundColorSwapper backgroundColorSwapper;
+
+    public enum VisibleOn
+    {
+        BlackBackground,
+        WhiteBackground,
+        BothBackgrounds
+    }
+
+    public VisibleOn visibleOn = VisibleOn.BothBackgrounds;
+    public KeyCode dismissKey = KeyCode.Space; 
+
+    private bool playerInTrigger = false;
 
     private void Start()
     {
-        helpText.SetActive(false);  
-    }
-
-    private void OnEnable()
-    {
-        ResetCurrentHelpText();
+        helpText.SetActive(false);
+        textComponent = helpText.GetComponent<TextMeshProUGUI>();
+        backgroundColorSwapper = FindObjectOfType<BackgroundColorSwapper>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            playerInTrigger = true;
             ShowHelpText();
         }
     }
@@ -31,49 +39,63 @@ public class HelpTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            playerInTrigger = false;
             HideHelpText();
         }
     }
 
     private void ShowHelpText()
     {
-        if (currentHelpText != null)
+        if (ShouldShowText())
         {
-            currentHelpText.SetActive(false);
-            StopAllCoroutines();  
+            UpdateTextColor();
+            helpText.SetActive(true);
         }
-
-        helpText.SetActive(true);
-        currentHelpText = helpText;
-
-        StartCoroutine(HideAfterDelay());
-    }
-
-    private IEnumerator HideAfterDelay()
-    {
-        yield return new WaitForSeconds(displayDuration);
-        HideHelpText();
     }
 
     private void HideHelpText()
     {
-        if (helpText != null)
-        {
-            helpText.SetActive(false);
-        }
+        helpText.SetActive(false);
+    }
 
-         if (currentHelpText == helpText)
+    private bool ShouldShowText()
+    {
+        if (backgroundColorSwapper != null)
         {
-            currentHelpText = null;
+            bool isBackgroundBlack = backgroundColorSwapper.IsBackgroundBlack();
+            return visibleOn == VisibleOn.BothBackgrounds ||
+                   (visibleOn == VisibleOn.BlackBackground && isBackgroundBlack) ||
+                   (visibleOn == VisibleOn.WhiteBackground && !isBackgroundBlack);
+        }
+        return false;
+    }
+
+    private void UpdateTextColor()
+    {
+        if (backgroundColorSwapper != null && textComponent != null)
+        {
+            textComponent.color = backgroundColorSwapper.IsBackgroundBlack() ? Color.white : Color.black;
         }
     }
 
-    public static void ResetCurrentHelpText()
+    private void Update()
     {
-        if (currentHelpText != null)
+        if (playerInTrigger)
         {
-            currentHelpText.SetActive(false);
-            currentHelpText = null;
+            if (ShouldShowText())
+            {
+                UpdateTextColor();
+                helpText.SetActive(true);
+
+                if (Input.GetKeyDown(dismissKey))
+                {
+                    HideHelpText();
+                }
+            }
+            else
+            {
+                HideHelpText();
+            }
         }
     }
 }
