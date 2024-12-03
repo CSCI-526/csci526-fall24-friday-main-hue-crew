@@ -3778,6 +3778,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941662850}
     - target: {fileID: 4948942097414501438, guid: 8ed854d203d66324bbc986359ee50b2b, type: 3}
+      propertyPath: dashDistance
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948942097414501438, guid: 8ed854d203d66324bbc986359ee50b2b, type: 3}
       propertyPath: levelPassedText
       value: 
       objectReference: {fileID: 1594306745}

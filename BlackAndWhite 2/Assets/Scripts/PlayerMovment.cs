@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
     public float jumpForce = 2.0f;
-    public float dashDistance = 5.0f;
+    public float dashDistance = 3.2f;
     public float dashCooldown = 1.0f;
     public float dashTime = 0.2f;
 
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private float fadeDuration = 1.0f;
     public Text trapHitText;
     private bool hitTrap = false;
+
 
     void Start()
     {
@@ -46,11 +47,8 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (isDashing || hitTrap) return;
+        
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(moveHorizontal, 0);
-        transform.Translate(movement * speed * Time.deltaTime);
 
     }
 
@@ -59,6 +57,9 @@ public class PlayerController : MonoBehaviour
         if (isDashing || hitTrap) return;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
+        
+        Vector2 movement = new Vector2(moveHorizontal, 0);
+        transform.Translate(movement * speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.V) && Time.time >= lastDashTime + dashCooldown)
+        if ((Input.GetKeyDown(KeyCode.V) || (Input.GetKeyDown(KeyCode.K))) && Time.time >= lastDashTime + dashCooldown)
         {
             if (MetricManager.instance != null)
             {
@@ -93,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + new Vector3(dashDirection * dashDistance, 0, 0);
+        // Debug.Log($"Dashing from {startPosition} to {targetPosition} with dashDistance {dashDistance}");
 
         float elapsedTime = 0;
 
@@ -106,6 +108,7 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null && hit.collider.CompareTag("Obstacle"))
             {
                 transform.position = new Vector3(hit.point.x - dashDirection * 0.05f, transform.position.y, transform.position.z);
+                // Debug.Log("Dash interrupted by obstacle.");
                 isDashing = false;
                 yield break;
             }
@@ -262,11 +265,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.Log("No more levels to load. This is the last level.");
-            if (MetricManager.instance != null)
+            /*if (MetricManager.instance != null)
             {
-                //MetricManager.instance.NextLevel(currentSceneIndex - 1);
+                MetricManager.instance.NextLevel(currentSceneIndex - 1);
                 MetricManager.instance.PushUpload();
-            }
+            }*/
             
         }
     }
@@ -297,14 +300,14 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     private void StopPlayer()
-{
-    rb.velocity = Vector2.zero;
-    speed = 0f;
-    if (trapHitText != null)
     {
-        trapHitText.text = "You hit a trap! Game Over";
-        trapHitText.gameObject.SetActive(true);
-    }
-    StartCoroutine(RestartLevelWithDelay());
+        rb.velocity = Vector2.zero;
+        speed = 0f;
+        if (trapHitText != null)
+        {
+            trapHitText.text = "You hit a trap! Game Over";
+            trapHitText.gameObject.SetActive(true);
+        }
+        StartCoroutine(RestartLevelWithDelay());
 }
 }
