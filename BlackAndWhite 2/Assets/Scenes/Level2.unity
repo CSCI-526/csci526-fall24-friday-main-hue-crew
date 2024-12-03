@@ -5504,7 +5504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundOrObstacle: {fileID: 1666108209}
   helperText: {fileID: 2050190075}
-  screenOffset: {x: 0, y: -420}
+  screenOffset: {x: 0, y: -450}
 --- !u!1001 &2058699814
 PrefabInstance:
   m_ObjectHideFlags: 0
