@@ -30,19 +30,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // originalPosition = transform.position;
+        originalPosition = transform.position;
 
-        // if (colorSwapScript == null)
-        // {
-        //     colorSwapScript = FindObjectOfType<BackgroundColorSwapper>();
-        // }
+        if (colorSwapScript == null)
+        {
+            colorSwapScript = FindObjectOfType<BackgroundColorSwapper>();
+        }
 
-        // if (levelPassedText != null) levelPassedText.SetActive(false);
-        // if (fadeImage != null) fadeImage.color = new Color(0, 0, 0, 0);
-        // if (trapHitText != null)
-        // {
-        //     trapHitText.gameObject.SetActive(false);
-        // }
+        if (levelPassedText != null) levelPassedText.SetActive(false);
+        if (fadeImage != null) fadeImage.color = new Color(0, 0, 0, 0);
+        if (trapHitText != null)
+        {
+            trapHitText.gameObject.SetActive(false);
+        }
     }
 
     public void FixedUpdate()
