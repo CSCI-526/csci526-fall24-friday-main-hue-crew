@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.V) && Time.time >= lastDashTime + dashCooldown)
+        if ((Input.GetKeyDown(KeyCode.V) || (Input.GetKeyDown(KeyCode.K))) && Time.time >= lastDashTime + dashCooldown)
         {
             if (MetricManager.instance != null)
             {

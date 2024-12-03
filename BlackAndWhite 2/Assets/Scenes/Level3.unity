@@ -302,7 +302,7 @@ MonoBehaviour:
   pointA: {fileID: 1035266001}
   pointB: {fileID: 876874695}
   speed: 2
-  initialOffset: 0
+  initialOffset: 12
   bufferDistance: 0.5
 --- !u!1001 &60612882
 PrefabInstance:
@@ -661,7 +661,7 @@ MonoBehaviour:
   pointA: {fileID: 1035266001}
   pointB: {fileID: 876874695}
   speed: 2
-  initialOffset: 0
+  initialOffset: 12
   bufferDistance: 0.5
 --- !u!1 &136510317 stripped
 GameObject:
@@ -979,11 +979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898212250710726655, guid: a35c6e776f55fa542a3b4b9ca101cd7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.84
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 5898212250710726655, guid: a35c6e776f55fa542a3b4b9ca101cd7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.91
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5898212250710726655, guid: a35c6e776f55fa542a3b4b9ca101cd7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 3
-  initialOffset: 12
+  initialOffset: 4
   bufferDistance: 2
 --- !u!1001 &276581193
 PrefabInstance:
@@ -1397,7 +1397,7 @@ MonoBehaviour:
   pointA: {fileID: 1619194539}
   pointB: {fileID: 1799476357}
   speed: 3
-  initialOffset: 0
+  initialOffset: 4
   bufferDistance: 0.5
 --- !u!1001 &343881973
 PrefabInstance:
@@ -2962,11 +2962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalScale.y
-      value: 19.7
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.85
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3193,10 +3193,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 491744305}
     m_Modifications:
-    - target: {fileID: 6347938654408542993, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6696671257413654929, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -3267,7 +3263,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7796059195120702567, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1327003322}
+      addedObject: {fileID: 1327003318}
   m_SourcePrefab: {fileID: 100100000, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
 --- !u!4 &939011691 stripped
 Transform:
@@ -3528,7 +3524,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 2
-  initialOffset: 0
+  initialOffset: 8
   bufferDistance: 0.5
 --- !u!1 &981986783 stripped
 GameObject:
@@ -3587,7 +3583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3595,7 +3591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.66
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3777,6 +3773,10 @@ PrefabInstance:
       propertyPath: trapHitText
       value: 
       objectReference: {fileID: 941662850}
+    - target: {fileID: 4948942097414501438, guid: 8ed854d203d66324bbc986359ee50b2b, type: 3}
+      propertyPath: dashDistance
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4948942097414501438, guid: 8ed854d203d66324bbc986359ee50b2b, type: 3}
       propertyPath: levelPassedText
       value: 
@@ -4096,7 +4096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4104,7 +4104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4739,7 +4739,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8146978627719742424, guid: 4d8b6b939ae38dc40b8247bc53e08252, type: 3}
   m_PrefabInstance: {fileID: 897905488}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1327003322
+--- !u!114 &1327003318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5143,7 +5143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304564268438391265, guid: 5f2989f03827f47af8cb074c743910f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.5
+      value: 34.89
       objectReference: {fileID: 0}
     - target: {fileID: 8304564268438391265, guid: 5f2989f03827f47af8cb074c743910f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5211,7 +5211,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 1.5
-  initialOffset: 0
+  initialOffset: 8
   bufferDistance: 0.5
 --- !u!1001 &1390368270
 PrefabInstance:
@@ -5479,7 +5479,7 @@ MonoBehaviour:
   pointA: {fileID: 1619194539}
   pointB: {fileID: 1799476357}
   speed: 3
-  initialOffset: 0
+  initialOffset: 16
   bufferDistance: 0.5
 --- !u!1001 &1446765346
 PrefabInstance:
@@ -5791,7 +5791,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 1.5
-  initialOffset: 0
+  initialOffset: 16
   bufferDistance: 0.5
 --- !u!1 &1594306745
 GameObject:
@@ -5827,7 +5827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: 200}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1594306747
@@ -5877,8 +5877,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6312,7 +6312,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 3
-  initialOffset: 6
+  initialOffset: 4
   bufferDistance: 2
 --- !u!1 &1704178627 stripped
 GameObject:
@@ -6324,23 +6324,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
   m_PrefabInstance: {fileID: 2038253054}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1704178632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704178627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1297341533841d6acabaa29a50fef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 939011691}
-  pointB: {fileID: 1904081956}
-  speed: 3
-  initialOffset: 0
-  bufferDistance: 2
 --- !u!4 &1728983169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
@@ -6398,7 +6381,7 @@ MonoBehaviour:
   pointA: {fileID: 1619194539}
   pointB: {fileID: 1799476357}
   speed: 3
-  initialOffset: 0
+  initialOffset: 16
   bufferDistance: 0.5
 --- !u!1 &1794966149 stripped
 GameObject:
@@ -7030,7 +7013,7 @@ MonoBehaviour:
   pointA: {fileID: 1363287153}
   pointB: {fileID: 1904081956}
   speed: 2
-  initialOffset: 0
+  initialOffset: 16
   bufferDistance: 0.5
 --- !u!1 &2003814969
 GameObject:
@@ -7933,7 +7916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 4283160305018617046, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7974,10 +7957,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 933416760875748757, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1704178632}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a520ba9e1e66784ca92e3c279a9fbd3, type: 3}
 --- !u!1001 &2086895552
 PrefabInstance:
@@ -8240,7 +8220,7 @@ MonoBehaviour:
   pointA: {fileID: 1619194539}
   pointB: {fileID: 1799476357}
   speed: 3
-  initialOffset: 0
+  initialOffset: 4
   bufferDistance: 0.5
 --- !u!1001 &7226497248480864899
 PrefabInstance:

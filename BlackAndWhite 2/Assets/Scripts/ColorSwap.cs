@@ -197,7 +197,7 @@ public class BackgroundColorSwapper : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J))
         {
             if (MetricManager.instance != null)
             {
