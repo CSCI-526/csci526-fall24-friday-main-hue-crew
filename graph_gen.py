@@ -5,17 +5,17 @@ import firebase_admin
 from firebase_admin import credentials, db
 import collections
 from matplotlib.colors import LinearSegmentedColormap
+from datetime import datetime
 
-levels_size = {'unity_min_x': [51.94-75, -0.3-129.15/2, -60], 'unity_max_x': [51.94+75, -0.3+129.15/2, 60], 'unity_min_y': [1.56-7, 1.56-7, 1.56-7], 'unity_max_y': [1.56+7, 1.56+7, 1.56+7]}
+LEVEL_CNT = 4
+
+levels_size = {'unity_min_x': [51.94-75, 26.65-91.5, 25.38-85.4, 116.58-141.15 ], 'unity_max_x': [51.94+75, 26.65+91.5, 25.38+85.4, 116.58+141.15 ], 'unity_min_y': [1.56-7, 1.56-7, 4.8-10.24, 2.7-8.15], 'unity_max_y': [1.56+7, 1.56+7, 4.8+10.24, 2.7+8.15]}
 
 def sketch_bar_charts(data, title, x_label, y_label, filename):
 
-    x_labels = ['Level1', 'Level2', 'Level3']
+    x_labels = ['Level1', 'Level2', 'Level3', 'Level4']
 
-    if title == 'trapResets':
-        avg_val = [sum(data[i])/len(data[i]) * 10 for i in range(len(x_labels))]
-    else:
-        avg_val = [sum(data[i])/len(data[i]) for i in range(len(x_labels))]
+    avg_val = [sum(data[i])/len(data[i]) for i in range(len(x_labels))]
 
 
     plt.figure(figsize=(10, 5))
@@ -60,7 +60,7 @@ def sketch_heatmap(unity_positions, level, title):
     plt.figure(figsize=(10, 5))
     plt.imshow(background, extent=[0, image_width, 0, image_height])  # Set the extent to match the image size
     sc = plt.scatter(x_values, y_values, c=colors, cmap=cmap, s=50, alpha=0.5)  # Use alpha for better visibility
-    plt.colorbar(sc, label='Death Count')
+    plt.colorbar(sc, label='Count')
     plt.title(f'level{level+1} ' + title)
     plt.xlabel('X Position')
     plt.ylabel('Y Position')
@@ -89,7 +89,13 @@ def fetch_player_metrics():
         guest_type = guest_id.split('_')[0]
         if guest_type != 'NewGuestTest':
             continue
-        for session in sessions.values():
+        for session_name, session in sessions.items():
+            date = session_name.split('_')[1]
+            session_date = datetime.strptime(date, "%Y%m%d%H%M%S")
+            change_date = datetime.strptime('20241130000000', "%Y%m%d%H%M%S")
+
+            if session_date <= change_date:
+                continue
             for stats in session:
                 if not stats: continue
                 for level, stat in stats.items():
@@ -100,12 +106,12 @@ def fetch_player_metrics():
                         else:
                             if stat_name == 'levelTime' and stat_value == '0': continue
                             bar_chart_stats[(level_num, stat_name)].append(float(stat_value))
-    bar_data = collections.defaultdict(lambda: [[] for _ in range(3)])
+    bar_data = collections.defaultdict(lambda: [[] for _ in range(LEVEL_CNT)])
     for (level_num, stat_name), val in bar_chart_stats.items():
         bar_data[stat_name][level_num-1] += val
     for stat_name, data in bar_data.items():
         sketch_bar_charts(data, stat_name, 'Level', '', stat_name)
-    heatmap_data = collections.defaultdict(lambda: [[] for _ in range(3)])
+    heatmap_data = collections.defaultdict(lambda: [[] for _ in range(LEVEL_CNT)])
     for (level_num, stat_name), positions in heatmap_stats.items():
         res = []
         for sub_positions in positions:
